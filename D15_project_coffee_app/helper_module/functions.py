@@ -12,17 +12,19 @@ def check_resources(order, menu, resources):
 
     if item['water'] <= resources['water']:
         return True
-    else:
+    elif item['water'] > resources['water']:
         print("Sorry, not enough water.")
+        return False
     if item['milk'] <= resources['milk']:
         return True
-    else:
+    elif item['milk'] > resources['milk']:
         print("Sorry, not enough milk.")
-
+        return False
     if item['coffee'] <= resources['coffee']:
         return True
-    else:
+    elif item['coffee'] > resources['coffee']:
         print("Sorry, not enough coffee.")
+        return False
     return False
 
 def calculate_money(coin, amount, coins):
